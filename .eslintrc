@@ -1,0 +1,35 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": ["airbnb"],
+  "plugins": [],
+  "rules": {
+    "no-console": 0,
+    "import/extensions": 0,
+    "eol-last": 0,
+    "no-unused-vars": 1,
+    "import/prefer-default-export": 0,
+    "react/jsx-filename-extension": 0,
+    "global-require": 0,
+    "react/jsx-indent-props": 0,
+    "react/jsx-indent": 0,
+    "react/no-danger": 0,
+    "react/prefer-stateless-function": 1,
+    "react/no-unused-prop-types": 1,
+    "indent": 1,
+    "react/no-did-mount-set-state": 0, // Should be removed as it's opposite of react should do
+    "import/no-extraneous-dependencies": 0,// Because of webpack alias
+    "no-await-in-loop": 0, //Because of upload delay
+    "comma-dangle": 0,// Will cause warnings when breaking line in function arguments
+    "no-underscore-dangle": 0, // For lodash, underscore, ramda
+    "react/no-array-index-key": 0,
+    "prefer-const":  1,
+    "no-debugger": 0,
+    "import/no-unresolved": 0,
+    "no-trailing-spaces": 1
+  }
+}
