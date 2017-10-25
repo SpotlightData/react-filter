@@ -9,7 +9,7 @@ function applyFilter(list, filter) {
 }
 /**
  * Puts files trough filters
- * @param  {Array<T>} list  
+ * @param  {Array<T>} list
  * @param  {Object} filters
  * @return {Array<T>}
  */

@@ -30,6 +30,7 @@
     "prefer-const":  1,
     "no-debugger": 0,
     "import/no-unresolved": 0,
-    "no-trailing-spaces": 1
+    "no-trailing-spaces": 1,
+    "import/no-named-as-default": 0, 
   }
 }

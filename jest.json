@@ -2,12 +2,5 @@
   "bail": true,
   "verbose": true,
   "roots": ["./src"],
-  "setupFiles": [
-    "jest-localstorage-mock"
-  ],
-  "moduleNameMapper": {
-    "\\.(css)$": "<rootDir>/node_modules/jest-css-modules",
-    "\\.worker.js":"<rootDir>/__mocks__/workerMock.js"
-  },
   "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js"
 }
