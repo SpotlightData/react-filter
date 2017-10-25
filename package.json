@@ -4,7 +4,7 @@
   "main": "./lib/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "NODE_ENV=build babel src --out-file lib/index.js --ignore '**/*.test.js'",
+    "build": "NODE_ENV=build babel src --out-dir lib --ignore '**/*.test.js'",
     "test": "NODE_ENV=\"test\" jest --config jest.json",
     "test:watch": "npm run test -- --watch",
     "lint": "eslint src/** --config .eslintrc"
