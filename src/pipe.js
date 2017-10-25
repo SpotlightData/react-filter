@@ -14,5 +14,10 @@ function applyFilter(list, filter) {
  * @return {Array<T>}
  */
 export default function pipe(list, filters) {
+  if (!Array.isArray(list)) {
+    throw TypeError('Expected list to be an array');
+  } else if (!(filters instanceof Object)) {
+    throw TypeError('Expected filters to be an object');
+  }
   return Object.values(filters).reduce(applyFilter, list);
 }
