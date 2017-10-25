@@ -2,6 +2,7 @@
   "name": "react-filter",
   "version": "1.0.0",
   "main": "./lib/index.js",
+  "repository": "SpotlightData/react-filter",
   "license": "MIT",
   "scripts": {
     "build": "NODE_ENV=build babel src --out-dir lib --ignore '**/*.test.js'",
@@ -9,7 +10,6 @@
     "test:watch": "npm run test -- --watch",
     "lint": "eslint src/** --config .eslintrc"
   },
-  "betterScripts": {},
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.10",
