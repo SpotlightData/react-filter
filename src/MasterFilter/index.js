@@ -62,7 +62,7 @@ export class MasterFilter extends React.Component {
     const { filters, onRefilter } = this.props;
 
     const newFilters = clone(filters);
-    filters[id].state = newState;
+    newFilters[id].state = newState;
     return onRefilter(newFilters);
   }
 
