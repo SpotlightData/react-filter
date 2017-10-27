@@ -38,6 +38,10 @@ export class MasterFilter extends React.Component {
     });
   }
 
+  shouldComponentUpdate() {
+    return false;
+  }
+
   mapColumns = filters => filters.map(({ Component, id }) => {
     const filter = this.props.filters[id];
     if (filter === undefined) {
@@ -61,8 +65,14 @@ export class MasterFilter extends React.Component {
   updateFilterState = id => (newState) => {
     const { filters, onRefilter } = this.props;
 
-    const newFilters = clone(filters);
-    newFilters[id].state = newState;
+    const newFilter = Object.assign({}, filters[id], {
+      state: newState,
+    });
+
+    const newFilters = Object.assign({}, filters, {
+      [id]: newFilter,
+    });
+
     return onRefilter(newFilters);
   }
 
