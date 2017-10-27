@@ -1,6 +1,6 @@
 {
   "name": "react-filter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "./lib/index.js",
   "repository": "SpotlightData/react-filter",
   "license": "MIT",
