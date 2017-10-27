@@ -1,8 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
+import { equals } from 'ramda';
 import { MasterFilter } from './';
+
 
 const defaultProps = {
   filters: { testId: {} },
@@ -13,6 +15,15 @@ const defaultProps = {
     row: 'row',
   },
 };
+
+class MockFilter extends React.Component {
+  componentWillMount() { // eslint-disable-next-line
+    this.props.onChange({ text: 'as' });
+  }
+  render() {
+    return <div />;
+  }
+}
 
 const wrapper = (props = {}) => {
   const fullProps = Object.assign({}, defaultProps, props);
@@ -55,5 +66,30 @@ describe('<MasterFilter />', () => {
     expect(() => {
       wrapper({ filters: {} }).find('MasterFilter').dive();
     }).toThrow();
+  });
+});
+
+describe('<MasterFilter /> Integration', () => {
+  it('should not modify the original object', () => {
+    let props;
+    expect.assertions(1);
+
+    function check(newFilters) {
+      expect(equals(props.filters, newFilters)).toBe(false);
+    }
+
+    props = Object.assign(defaultProps, {
+      filters: {
+        test: {
+          state: {
+            test: '12',
+          },
+          functor: () => false,
+        },
+      },
+      onRefilter: check,
+      components: [[{ Component: MockFilter, id: 'test' }]],
+    });
+    const component = mount(<MasterFilter {...props} />);
   });
 });

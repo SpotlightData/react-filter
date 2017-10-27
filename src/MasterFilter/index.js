@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import injectSheet from 'react-jss';
 import shortid from 'shortid';
+import { clone } from 'ramda';
 
 import style from './style';
 
@@ -58,8 +59,11 @@ export class MasterFilter extends React.Component {
   ));
 
   updateFilterState = id => (newState) => {
-    this.props.filters[id].state = newState;
-    this.props.onRefilter(this.props.filters);
+    const { filters, onRefilter } = this.props;
+
+    const newFilters = clone(filters);
+    filters[id].state = newState;
+    return onRefilter(newFilters);
   }
 
   render() {
