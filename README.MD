@@ -49,7 +49,7 @@ const components = [
 The state of the filter which is found via `filterId` would be supplied to `<Component />`
 
 #### `onRefilter`
-  will pass new updated filters dictionary.<br>
+  will pass new updated filters dictionary. `onRefilter: (filters) => {}`<br>
 
 ### Example filter component
 ```javascript
